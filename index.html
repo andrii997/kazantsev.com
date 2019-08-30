@@ -1,0 +1,806 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+  <title>Kazantsev</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <link rel="stylesheet" href="css/bootstrap-grid.css">
+  <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+  <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.css" />
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <link rel="stylesheet" href="css/media.css">
+  <link rel="stylesheet" href="css/animate.css">
+
+  <script src="js/jquery.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+
+  <link rel="stylesheet" href="css/magnific-popup.css">
+  <script src="js/jquery.magnific-popup.js"></script>
+  <script src="js/wow.min.js"></script>
+  <script>
+    new WOW().init();
+  </script>
+
+<script type="text/javascript">
+ var arr = new Array();
+    function initialize() { 
+        var i;  
+        var Locations = [
+                {
+                  lat:48.856614, 
+                  lon:2.3522219000000177, 
+                  address:'Paris',
+                  gval:'25.5',
+                  aType:'Non-Commodity',
+                  title:'Paris',
+                  descr:'Paris'           
+                },        
+                    {
+                  lat: 55.7512419, 
+                  lon: 37.6184217,
+                  address:'Moscow',
+                  gval:'11.5',
+                  aType:'Non-Commodity',
+                  title:'Moscow',
+                  descr:'Moscow Airport'              
+                },     
+
+                {
+              lat:-9.481553000000002, 
+              lon:147.190242, 
+              address:'Port Moresby',
+              gval:'1',
+              aType:'Oil',
+              title:'Papua New Guinea',
+              descr:'Papua New Guinea 123123123'              
+            },
+            {
+           lat:20.5200,
+           lon:77.7500,
+           address:'Indore',
+            gval:'1',
+            aType:'Oil',
+            title:'Indore, India',
+            descr:'Airport India'
+        }
+    ];
+
+    var myOptions = {
+        zoom: 2,
+        center: new google.maps.LatLng(51.9000,8.4731),
+        mapTypeId: google.maps.MapTypeId.ROADMAP
+    };
+
+    var map = new google.maps.Map(document.getElementById("map"), myOptions);
+
+    var infowindow =  new google.maps.InfoWindow({
+        content: ''
+    });
+
+    for (i = 0; i < Locations.length; i++) {
+            size=15;        
+            var img=new google.maps.MarkerImage('marker.png',           
+                new google.maps.Size(size, size),
+                new google.maps.Point(0,0),
+                new google.maps.Point(size/2, size/2)
+           );
+
+        var marker = new google.maps.Marker({
+            map: map,
+            title: Locations[i].title,
+            position: new google.maps.LatLng(Locations[i].lat, Locations[i].lon),           
+                icon: img
+        });
+
+        bindInfoWindow(marker, map, infowindow, "<p>" + Locations[i].descr + "</p>",Locations[i].title);  
+
+    }
+
+}
+
+function bindInfoWindow(marker, map, infowindow, html, Ltitle) { 
+    google.maps.event.addListener(marker, 'mouseover', function() {
+            infowindow.setContent(html); 
+            infowindow.open(map, marker); 
+
+    });
+    google.maps.event.addListener(marker, 'mouseout', function() {
+        infowindow.close();
+
+    }); 
+
+  </script>
+</head>
+
+<body>
+
+<header>
+  <div class="container">
+    <div class="row">
+
+      <div class="header-menu">
+     
+        <div class="col-lg-auto col-md-12 logo">
+          <a href="/"><img src="img/logo.png" alt="Скульптур тела"></a>
+        </div>
+
+        <ul class="col-lg-auto col-md-8 col-sm-12 nav navbar-nav">
+          <li><a href="#program" class="wow fadeInUp" data-wow-delay="0s">ПРОГРАММА<span class="sr-only">(current)</span></a></li>
+          <li><a href="#reviews" class="wow fadeInUp" data-wow-delay="0.2s">ОТЗЫВЫ</a></li>
+          <li><a href="#tariffs" class="wow fadeInUp" data-wow-delay="0.4s">ТАРИФЫ</a></li>
+          <li><a href="#map" class="wow fadeInUp" data-wow-delay="0.6s">КОНТАКТЫ</a></li>
+        </ul>
+
+        <div class="col-lg-auto col-md-12 top_btn">
+          <a class="btn_all wow fadeInUp  popup-with-form" href="#test-form" data-wow-delay="0.8s" >Заполнить анкету</a>
+          <a class="btn_all wow fadeInUp" href="#" data-wow-delay="1s">Узнать больше</a>
+        </div>
+
+      </div>
+    
+      <div class="text_block">
+
+        <div class="col-lg-7 col-md-12 top_text">
+          <h1 class="title-text wow fadeInLeft" data-wow-delay="0s"><b>БЕЗОПАСНОЕ</b> ПОХУДЕНИЕ</h1>
+          <h2  class="subTitle-text wow fadeInLeft" data-wow-delay="0.2s">Хочешь красивую фигуру уже через месяц?</h2>
+          <p class="wow fadeInLeft" data-wow-delay="0.4s">Тонус тела и мышц, быстрое похедение, красивая фигура<br>
+            Если для тебя эти слова - боль? Тогда ты по адресу!<br>
+            Меня зовут Вячеслав Казанцев и я профессиональный<br>
+            фитнес тренер. Я помогу тебе достить поставленной цели !</p>
+          <a class="btn_all btn_allLong wow fadeInLeft popup-with-form" data-wow-delay="0.8s" href="#test-form"><b>Записаться</b> на <b>бесплатное занятие</b></a>
+
+        </div>
+
+        <div class="col-md-5 container-top_guy">
+            <a href="#">
+              <img src="img/1/1.png" alt="" class="top_guy">
+            </a>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</header>
+
+
+<!-- Стрелка вниз -->
+<a href="#first_white" class="to_bottom_a wow fadeInDown" data-wow-delay="1.5s"><div class="to_bottom">&darr;</div></a>
+
+
+<!-- Вячеслав Казанцев -->
+<div class="container first_white" id="first_white">
+  <div class="row align-items-center">
+
+    <div class="col-lg-6 col-md-6 col-sm-12">
+      <img src="img/1/guy_bottom.png" alt="Вячеслав Казанцев">
+    </div>
+
+    <div class="col-lg-6 col-md-6 col-sm-12">
+      <h2>Вячеслав Казанцев</h2>
+      <span>#СкульпторТела</span>
+      <p>Инновационная программа "#СкульпторТела":<br>
+          - быстрое, безвредное снижение веса,<br>
+          - укрепление здоровья,<br>
+          - максимально качественное тело.<br><br>
+          #СкульпторТела - уникальный, авторский метод, разработанный<br> 
+          Вячеславом Казанцевым, основанный на индивидуальном<br> 
+          сбалансированном питании и комплексе тренировок.</p>
+      <a class="first_white-btn btn_orange popup-with-form" href="#test-form" >Записаться сейчас</a>
+    </div>
+
+  </div> 
+</div>
+
+
+<!-- Наши результаты -->
+<div class="ourResults">
+  <div class="container text-white text-center">
+
+    <h2 class="wow fadeInUp" data-wow-delay="0.2s">Наши результаты</h2>
+
+    <div class="before_after">
+      <div class="before wow fadeInUp" data-wow-delay="0.4s">ДО</div>
+      <div class="after wow fadeInUp" data-wow-delay="0.6s">ПОСЛЕ</div>
+      <img src="img/2/before.png" class="img-before" alt="Before">
+      <img src="img/2/after.png" class="img-after" alt="After">
+    </div>
+
+    <div class="result_comment">
+
+      <div class="result_comment-blockRight">
+
+        <div class="result_comment-blockLeft">
+          <p class="result_comment-textLeft">Похудел на <b>9 килограм</b> за <b>2 месяца* </b> под руководством</p>
+        </div>
+
+        <p class="result_comment-textRight">Вячеслава <b>Казанцева</b></p>
+      </div>
+
+  </div>
+
+  </div>
+</div>
+
+
+<!-- КОМУ ПОМОЖЕТ НАША ПРОГРАММА? -->
+<div class="help-program">
+  <div class="container">
+
+    <div class="text-center">
+      <h2 class="title-text wow fadeInUp"><b>КОМУ ПОМОЖЕТ</b> НАША <b>ПРОГРАММА?</b></h2>
+      <p class="subtitle-text wow fadeInUp" data-wow-delay="0.2s">
+        <b>Наш опыт</b> позволяет работать и получать отличный результат с людьми,<br>
+        у которых нарушения с:
+      </p>
+    </div>
+
+    <div class="row justify-content-center">
+      <div class="illnesses_container">
+
+        <div class="col-lg-4 col-md-6 col-sm-12">
+          <div class="card wow fadeInUp">
+            <h4 class="card-title">Опорно-двигательным аппаратом</h4>
+            <img class="card-img-top" src="img/2/illness1.png" alt="Card image cap">
+            <p class="card-text">(ратроз, артрит, кифоз, скалиоз, лардоз, грыжи, протрузии и другое нарушение)</p>
+          </div>
+
+          <div class="card wow fadeInUp">
+            <h4 class="card-title">Нарушение Сердечно - сосудистой системы</h4>
+            <img class="card-img-top" src="img/2/illness4.png" alt="Card image cap">
+            <p class="card-text">(варикоз, аритмия, тахикардия, гипертонический крис и другое)</p>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 col-sm-12 centered_card">
+          <div class="card wow fadeInUp">
+            <h4 class="card-title">Нарушение эндокринной системы</h4>
+            <img class="card-img-top" src="img/2/illness2.png" alt="Card image cap">
+            <p class="card-text">(гормональный сбой у женщин) сбои щитовидной железы, Инсульнорещистентность, Диабет 1-2 типа</p>
+          </div>
+        </div>
+  
+        <div class="col-lg-4 col-md-6 col-sm-12">
+          <div class="card wow fadeInUp">
+            <h4 class="card-title">Ожирение</h4>
+            <img class="card-img-top" src="img/2/illness3.png" alt="Card image cap">
+            <p class="card-text">Проблемы с лишним весом, проблемы с сердцем</p>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-12">
+          <div class="card wow fadeInUp">
+            <h4 class="card-title">Нарушение ЖКТ</h4>
+            <img class="card-img-top" src="img/2/illness5.png" alt="Card image cap">
+            <p class="card-text">(Холецистити, гастрит, язва, изжога, панкреатит)</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+<!-- Программа “Скульптор Тела” -->
+<div class="program-container">
+  <div class="container">
+
+    <h2 class="title-text text-center wow fadeInUp" id="program">Программа <b>"Скульптор Тела"</b></h2> 
+
+    <div class="video_preview row">
+      <div class="center-block">
+        <iframe class="slider" src="https://www.youtube.com/embed/izV7GKRaiVI?controls=0" width="840" height="472.5" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" alt="video-block" allowfullscreen></iframe>
+      </div>
+    </div>
+
+    <div class="slider_buttons">
+      <div class="slider_button active" id="slider_button1"  onclick="slider_button1();">1</div>
+      <div class="slider_button" id="slider_button2" onclick="slider_button2()">2</div>
+      <div class="slider_button" id="slider_button3" onclick="slider_button3();">3</div>
+      <div class="slider_button" id="slider_button4" onclick="slider_button4();">4</div>
+    </div>
+
+  </div>
+
+
+  <!-- ПРЕИМУЩЕСТВА И ЦЕНА ПРОГРАМЫ
+  "СКУЛЬПТОР ТЕЛА" -->
+  <div class="advantages">
+    <div class="container-fluid">
+
+      <h2 class="title-text text-center wow fadeInUp" data-wow-delay="0.2s">
+        ПРЕИМУЩЕСТВА И ЦЕНА ПРОГРАМЫ<br> 
+        <b>"СКУЛЬПТОР ТЕЛА"</b>
+      </h2>
+
+      <table class="custom_table">
+        <thead>
+          <tr>
+            <th scope="col">Сравнение <br>характеристик</th>
+            <th scope="col">Занятия самому <br> в домашних условиях</th>
+            <th scope="col">Диетолог</th>
+            <th scope="col">Фитнес <br>Инструктор</th>
+            <th scope="col">Фитнес<br> Клуб</th>
+            <th scope="col">Скульптор Тела</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr>
+            <td>Эффективность в снижении веса</td>
+            <td><img src="img/icons/minus_gray.png" alt="Minus" /></td>
+            <td><img src="img/icons/plus_orange.png" alt="Plus" /></td>
+            <td><img src="img/icons/minus_gray.png" alt="Minus" /></td>
+            <td><img src="img/icons/minus_gray.png" alt="Minus" /></td>
+            <td><img src="img/icons/plus_white.png" alt="Plus" /></td>
+          </tr>
+          <tr>
+            <td>16 персональных тренировок</td>
+            <td><img src="img/icons/minus_gray.png" alt="Minus" /></td>
+            <td><img src="img/icons/minus_gray.png" alt="Minus" /></td>
+            <td><img src="img/icons/plus_orange.png" alt="Plus" /></td>
+            <td><img src="img/icons/minus_gray.png" alt="Minus" /></td>
+            <td><img src="img/icons/plus_white.png" alt="Plus" /></td>
+          </tr>
+          <tr>
+            <td>Скорость получения результата</td>
+            <td><img src="img/icons/minus_gray.png" alt="Minus" /></td>
+            <td><img src="img/icons/minus_gray.png" alt="Minus" /></td>
+            <td><img src="img/icons/minus_gray.png" alt="Minus" /></td>
+            <td><img src="img/icons/minus_gray.png" alt="Minus" /></td>
+            <td><img src="img/icons/plus_white.png" alt="Plus" /></td>
+          </tr>
+          <tr>
+            <td>Безопасность для здоровья</td>
+            <td><img src="img/icons/minus_gray.png" alt="Minus" /></td>
+            <td><img src="img/icons/plus_orange.png" alt="Plus" /></td>
+            <td><img src="img/icons/plus_orange.png" alt="Plus" /></td>
+            <td><img src="img/icons/minus_gray.png" alt="Minus" /></td>
+            <td><img src="img/icons/plus_white.png" alt="Plus" /></td>
+          </tr>
+          <tr>
+            <td>Хороший тонус Мышц и подтянутое тело</td>
+            <td><img src="img/icons/minus_gray.png" alt="Minus" /></td>
+            <td><img src="img/icons/minus_gray.png" alt="Minus" /></td>
+            <td><img src="img/icons/minus_gray.png" alt="Minus" /></td>
+            <td><img src="img/icons/minus_gray.png" alt="Minus" /></td>
+            <td><img src="img/icons/plus_white.png" alt="Plus" /></td>
+          </tr>
+          <tr>
+            <td>Сопровождение, контроль и анализ результат</td>
+            <td><img src="img/icons/minus_gray.png" alt="Minus" /></td>
+            <td><img src="img/icons/minus_gray.png" alt="Minus" /></td>
+            <td><img src="img/icons/minus_gray.png" alt="Minus" /></td>
+            <td><img src="img/icons/minus_gray.png" alt="Minus" /></td>
+            <td><img src="img/icons/plus_white.png" alt="Plus" /></td>
+          </tr>
+        </tbody>
+
+        <tfoot>
+          <tr>
+            <td>Стоимость</td>
+
+            <td><img src="img/icons/minus_gray.png" alt="Minus" />
+                <img src="img/icons/plus_orange.png" style="padding-left: 5px" alt="Plus">
+            </td>
+
+            <td><img src="img/icons/minus_gray.png" style="height: 20px" alt="Minus" /><br>
+              <b>8100 грн</b><br><small  class="smallText">(цена ниже средней за рацион на месяц)</small></td>
+
+            <td><img src="img/icons/minus_gray.png" style="padding-bottom: 5px" alt="Minus" /><br>
+              <b>5600 грн</b></td>
+
+            <td><img src="img/icons/plus_orange.png" style="padding-bottom: 5px" alt="Plus" /><br>
+              <b>750 грн</b></td>
+
+            <td><img src="img/icons/plus_white.png" style="padding-bottom: 5px" alt="Plus" /><br>
+              <b>3790 грн</b></td>
+          </tr>
+        </tfoot>
+
+      </table>  
+
+    </div>
+  </div>
+
+</div>
+
+
+<!-- ТАРИФЫ
+ПЕРСОНАЛЬНЫЙ СКУЛЬПТОР ТЕЛА -->
+<div class="tariffs" id="tariffs">
+  <div class="container">
+
+    <h2 class="title-text text-center wow fadeInUp" data-wow-delay="0.2s"><b>ТАРИФЫ</b></h2>
+    <h3 class="subtitle-text text-center wow fadeInUp" data-wow-delay="0.4s">ПЕРСОНАЛЬНЫЙ СКУЛЬПТОР ТЕЛА</h3>
+
+    <div class="row justify-content-center tariff_cards">
+
+      <div class="col-lg-4 col-md-6 col-sm-12">
+        <div class="tariff_card">
+          <div class="tariff_card_title">ЛЕГКИЙ СТАРТ</div>
+
+          <div class="tariff_card_subtitle">СКУЛЬПТОР ТЕЛА С ТРЕНЕРОМ</div>
+
+          <div class="card-body">
+            <ul>
+              <li>до 16 тренировок</li>
+              <li>План по питанию</li>
+              <li>Сопровождение Месяц</li>
+              <li>Персональный тренер</li>
+              <li>Еженедельные замеры и анализ результатов</li>
+              <li>Фото до и после</li>
+              <li>Гарантированый результат</li>
+            </ul>
+          </div>
+
+          <div class="old_price"><b>8120 грн</b></div>
+
+          <div class="price">3790 грн</div>
+
+          <div class="under_price">+ абонемент зала на месяц в подарок</div>
+
+          <a class="btn_yellow popup-with-form" href="#test-form">ЗАПИСАТЬСЯ</a>
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-md-6 col-sm-12">
+        <div class="tariff_card tariff_card_centered">
+          <div class="tariff_card_title">ХИТ ПРОДАЖ</div>
+          <span class="under_title">Трансформация на 3 месяца</span>
+          
+          <div class="tariff_card_subtitle">СКУЛЬПТОР ТЕЛА С ТРЕНЕРОМ</div>
+
+          <div class="card-body">
+            <ul>
+              <li>до 48 тренировок</li>
+              <li>План по питанию</li>
+              <li>Сопровождение Месяц</li>
+              <li>Персональный тренер</li>
+              <li>Еженедельные замеры и анализ результатов</li>
+              <li>Фото до и после</li>
+              <li>Гарантированый результат</li>
+              <li class="text-white">До месяца заморозка*</li>
+            </ul>
+          </div>
+
+          <div class="old_price"><b>24360 грн</b></div>
+
+          <div class="price">9280 грн</div>
+
+          <div class="under_price">+ абонемент зала на 3 месяца в подарок</div>
+
+          <a class="btn_yellow popup-with-form" href="#test-form">ЗАПИСАТЬСЯ</a>
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-md-6 col-sm-12">
+        <div class="tariff_card">
+          <div class="tariff_card_title tariff_card_titleBig">VIP ТРАНСФОРМАЦИЯ</div>
+
+          <div class="tariff_card_subtitle">СКУЛЬПТОР ТЕЛА СО СТАРШИМ ТРЕНЕРОМ</div>
+
+          <div class="card-body">
+            <ul>
+              <li>до 48 тренировок</li>
+              <li>План по питанию</li>
+              <li>Сопровождение Месяц</li>
+              <li>Персональный тренер</li>
+              <li>Еженедельные замеры и анализ результатов</li>
+              <li>Фото до и после</li>
+              <li>Гарантированый результат</li>
+              <li class="text-white">До месяца заморозка*</li>
+            </ul>
+          </div>
+
+          <div class="old_price"><b>28200 грн</b></div>
+
+          <div class="price">12480 грн</div>
+
+          <div class="under_price">+ абонемент зала на 3 месяца в подарок</div>
+
+          <a class="btn_yellow popup-with-form" href="#test-form">ЗАПИСАТЬСЯ</a>
+        </div>
+      </div>
+
+    </div>
+    <br>
+  </div>
+
+<!-- СКУЛЬПТОР ТЕЛА МАРАФОН -->
+  <div class="marathon">
+    <div class="container-fluid">
+      <h2 class="title-text wow fadeInUp" data-wow-delay="0.2s">СКУЛЬПТОР ТЕЛА МАРАФОН</h2>
+
+      <div class="tariff_cards_noborders">
+
+        <div class="col-lg-3 col-md-6 col-sm-12">
+          <div class="tariff_card_noborders">
+            <div class="tariff_card_title">ЛЕГКИЙ СТАРТ</div>
+
+            <div class="text_yellow_box">СКУЛЬПТОР ТЕЛА С ТРЕНЕРОМ</div>
+
+            <div class="card-body">
+              <ul>
+                <li>до 16 тренировок</li>
+                <li>План по питанию</li>
+                <li>Сопровождение Месяц</li>
+                <li>Персональный тренер</li>
+                <li>Еженедельные замеры и анализ результатов</li>
+                <li>Фото до и после</li>
+                <li>Гарантированый результат</li>
+              </ul>
+            </div>
+
+            <div class="old_price"><b>8120 грн</b></div>
+
+            <div class="price">3390 грн</div>
+
+            <div class="under_price">+ абонемент зала на месяц в подарок</div>
+
+            <a class="btn_yellow popup-with-form" href="#test-form">ЗАПИСАТЬСЯ</a>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-md-6 col-sm-12">
+          <div class="tariff_card_noborders ">
+            <div class="tariff_card_title">ХИТ ПРОДАЖ</div>
+            <span class="under_title">Трансформация на 3 месяца</span>
+            
+            <div class="text_yellow_box">СКУЛЬПТОР ТЕЛА С ТРЕНЕРОМ</div>
+
+            <div class="card-body">
+              <ul>
+                <li>до 48 тренировок</li>
+                <li>План по питанию</li>
+                <li>Сопровождение Месяц</li>
+                <li>Персональный тренер</li>
+                <li>Еженедельные замеры и анализ результатов</li>
+                <li>Фото до и после</li>
+                <li>Гарантированый результат</li>
+                <li class="text-white">До месяца заморозка*</li>
+              </ul>
+            </div>
+
+            <div class="old_price"><b>24360 грн</b></div>
+
+            <div class="price">9280 грн</div>
+
+            <div class="under_price">+ абонемент зала на 3 месяца в подарок</div>
+
+            <a class="btn_yellow popup-with-form" href="#test-form">ЗАПИСАТЬСЯ</a>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-md-6 col-sm-12">
+          <div class="tariff_card_noborders">
+            <div class="tariff_card_title">СТАРТ ОНЛАЙН</div>
+
+            <div class="text_yellow_box">СКУЛЬПТОР ТЕЛА СО СТАРШИМ ТРЕНЕРОМ</div>
+
+            <div class="card-body">
+              <ul>
+                <li>до 16 тренировок</li>
+                <li>План по питанию</li>
+                <li>Сопровождение Месяц</li>
+                <li>Персональный тренер</li>
+                <li>Еженедельные замеры и анализ результатов</li>
+                <li>Фото до и после</li>
+                <li>Гарантированый результат</li>
+              </ul>
+            </div>
+
+            <div class="old_price"><b>2200 грн</b></div>
+
+            <div class="price">1899 грн</div>
+
+            <a class="btn_yellow popup-with-form" href="#test-form">ЗАПИСАТЬСЯ</a>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-md-6 col-sm-12">
+          <div class="tariff_card_noborders">
+            <div class="tariff_card_title">ХИТ ОНЛАЙН</div>
+            <span class="under_title">Трансформация на 3 месяца</span>
+
+            <div class="text_yellow_box">СКУЛЬПТОР ТЕЛА СО СТАРШИМ ТРЕНЕРОМ</div>
+
+            <div class="card-body">
+              <ul>
+                <li>до 48 тренировок</li>
+                <li>План по питанию</li>
+                <li>Сопровождение Месяц</li>
+                <li>Персональный тренер</li>
+                <li>Еженедельные замеры и анализ результатов</li>
+                <li>Фото до и после</li>
+                <li>Гарантированый результат</li>
+                <li class="text-white">До месяца заморозка*</li>
+              </ul>
+            </div>
+
+            <div class="old_price"><b>28200 грн</b></div>
+
+            <div class="price">12480 грн</div>
+
+            <div class="under_price">+ абонемент зала на 3 месяца в подарок</div>
+
+            <a class="btn_yellow popup-with-form" href="#test-form">ЗАПИСАТЬСЯ</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- Отзывы -->
+<h2 class="reviews-title-text" id="reviews">ОТЗЫВЫ</h2>
+
+<div class="reviews">
+  <div class="review">
+
+    <div class="review-img">
+      <img src="img/reviews/1.jpg" alt="before-after image" />
+    </div>
+
+    <div class="review-text">
+      <div class="review_title">Людмила</div>
+
+      <div class="review_descr">
+        <p>Похудела на <b>9 килограм</b> за 2 месяца за 
+          программой "S4L" под руководством Вячеслава Казанцева</p><br>
+        <p>Я просто в шоке! Результат просто нереальный</p><br>
+        <p>Очень благодарна Вячеславу, и рекомендую его, как професионального тренера!</p>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+<!-- Форма --> 
+<div class="contact_us">
+  <h3 class="title-text wow fadeInUp" data-wow-delay="0.2s"><b>Оставьте</b> свои <b>даные</b> мы обязательно <br><b>свяжемся с Вами</b></h3>
+
+  <form class="contact_us_form">
+    <input type="text" name="name" placeholder="Имя:" minlength="2" required>
+    <input type="email" name="email" placeholder="Ваш email:" required>
+    <input type="tel"  name="tel" pattern="\d*" maxlength="14"  placeholder="Телефон:" required>
+    <button type="submit" class="btn_form"><b>Отправить</b></button>
+</form>
+</div>
+
+
+<!-- MAP -->  
+<div class="map" id="map">
+  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2539.5329041849723!2d30.599399515732006!3d50.46842217947786!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40d4d01f7275e207%3A0xcdc6048204644636!2z0KTQuNGC0YjQsNC50L0!5e0!3m2!1sru!2sua!4v1555959075614!5m2!1sru!2sua" frameborder="0" style="border:0" allowfullscreen></iframe>
+
+  <div class="footer_shape">
+    <div class="container">
+
+      <div class="left_footer_shape">
+        <h4>Готов Изменить Свою Жизнь?</h4>
+        <p>Запишитесь на первое занятие БЕСПЛАТНО!</p>
+      </div>
+
+      <div class="right_footer_shape">
+        <a class="btn_orange mr-1 popup-with-form" href="#test-form" >Оставить заявку</a>
+        <a class="btn_white ml-1 popup-youtube" rel="nofollow" href="https://www.youtube.com/watch?v=5M1yY4m6ic0" >&#9658; Смотреть видео</a>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- Address -->
+<div class="address">
+  
+</div>
+
+
+
+<!-- Footer -->
+<div class="footer"> 
+
+  <div class="container">
+    <div class="row justify-content-between">
+
+      <div class="col-lg-auto col-md-12 footer_left1">
+        <a href="/"><img src="img/logo.png" alt="logo"></a>
+
+        <p>Выбрать язык: 
+            <select>
+              <option>English (UK)</option>
+              <option>Русский (RU)</option>
+            </select>
+        </p>
+      </div>
+
+      <div class="col-lg-auto col-sm-6 footer_left2">
+        <h4>Меню</h4>
+
+        <ul>
+          <li class="footer_active"><a href="#">Главная</a></li>
+          <li><a href="#">Соглашение</a></li>
+          <li><a href="#">Видеоинструкции</a></li>
+          <li><a href="#">Вебинар</a></li>
+        </ul>
+      </div> 
+
+      <div class="col-lg-auto col-sm-6 footer_right1">
+        <h4>Наши клубы</h4>
+
+        <ul>
+          <li><a href="#">Позняки</a></li>
+          <li><a href="#">Контрактовая Площадь</a></li>
+          <li><a href="#">Университетская</a></li>
+          <li><a href="#">м. Льва Толстого</a></li>
+        </ul>
+      </div> 
+
+      <div class="col-lg-auto col-md-12 footer_right2">
+        <h4>Рассылка новостей</h4>
+        <form class="footer-form">
+          <input type="email" name="footer_email" class="footer_email" placeholder="yourmail@gmail.com">
+          <button class="btn_footer"></button>
+        </form>
+      </div>
+
+    </div>
+
+
+
+    <hr>
+
+    <div class="footer_bottom">
+      <span>Copyright © 2019 Вячеслав Казанцев #СКУЛЬПТОРТЕЛА</span>
+      <span class="footer_icons">
+        <a href="#"><img src="img/icons/vk.png" alt="vk"></a>
+        <a href="#"><img src="img/icons/fb.png" alt="fb"></a>
+        <a href="#"><img src="img/icons/yt.png" alt="yt"></a>
+        <a href="#"><img src="img/icons/te.png" alt="te"></a>
+        <a href="#"><img src="img/icons/in.png" alt="in"></a>
+        <a href="#"><img src="img/icons/teBot.png" alt="teBot"></a>
+      </span>
+    </div>
+
+  </div>
+</div>
+
+<form id="test-form" class="mfp-hide white-popup-block">
+  <h2><b>Записаться</b> на бесплатное <b>занятие</b></h2>
+  <hr>
+
+  <div class="form-container">
+
+    <div class="firstName-container">
+      <label for="firstName">Ваше имя:</label>
+      <input id="firstName" name="name" type="text" placeholder="Имя" minlength="2" required>
+    </div>
+
+    <div class="lastName-container">
+      <label for="lastName">Ваша фамилия:</label>
+      <input id="lastName" name="name" type="text" placeholder="Фамилия" minlength="2" required>
+    </div>
+
+    <div class="phone-container">
+      <label for="phone">Ваш номер телефона:</label>
+      <input id="phone" name="phone" type="tel" placeholder="Телефон" pattern="\d*" maxlength="14" required>
+    </div>
+
+  </div>
+
+  <div class="form-submit-container">
+    <button type="submit" class="form-submit">Оформить заявку</button>
+  </div>
+
+</form>
+<script src="js/script.js"></script>
+
+</body>
+</html>

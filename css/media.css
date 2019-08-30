@@ -1,0 +1,457 @@
+@media (max-width: 992px) {
+	.logo,
+	.navbar-nav {
+		margin-bottom: 20px;
+	}
+
+	.navbar-nav > li > a {
+  padding: 0px 10px 0 10px;
+}
+
+.container-top_guy {
+	display: none;
+}
+
+.top_text {
+	margin-top: 30px;
+	text-align: center;
+}
+.top_text .title-text {
+	font-size: 32px;
+	margin-bottom: 10px;
+}
+.top_text .subTitle-text {
+	font-size: 20px;
+	margin-bottom: 20px;
+}
+.top_text p:before, .top_text p:after {
+ margin: 15px auto;
+}
+.to_bottom {
+	display: none;
+}
+.first_white img {
+	max-width: 355px;
+}
+.first_white h2 {
+	margin-top: 0;
+}
+.first_white {
+ margin: 40px auto 60px;
+}
+.before, .after {
+top: -3rem;
+}
+
+.after {
+	right: 3rem;
+}
+
+.before {
+	left: 3rem;
+}
+
+.result_comment-blockRight {
+	width: 750px;
+}
+.result_comment-blockLeft {
+	padding: 15px 70px 15px 30px;
+}
+.result_comment p {
+	font-size: 16px;
+}
+.result_comment-textLeft > span {
+ right: -50px;
+}
+
+.ourResults {
+	height: 950px;
+}
+.centered_card {
+	padding-top: 0!important;
+}
+
+.slider {
+	height: 236px;
+	width: 420px;
+}
+.tariff_card {
+	margin: 0px auto 25px;
+	padding: 20px 10px 10px;
+	width: 80%;
+	height: 560px;
+}
+
+.marathon .title-text {
+	font-size: 38px;
+	margin: 60px 0 60px;
+}
+
+.tariffs {
+	background: #131010 url(../img/4/background4.png) no-repeat center top;
+	margin: 40px 0 0;
+}
+.tariff_card_title {
+	font-size: 24px;
+	width: 100%;
+}
+.tariffs {
+	padding: 100px 0 0px;
+}
+.reviews .title-text {
+	font-size: 42px;
+}
+.tariffs .title-text {
+	font-size: 38px;
+}
+.tariffs .subtitle-text {
+	font-size: 28px;
+	margin-bottom: 60px;
+}
+.old_price {
+	font-size: 22px;
+}
+.price {
+	font-size: 32px;
+}
+.tariff_card_noborders {
+	height: 520px;
+	width: 80%;
+	margin: 0 auto 80px;
+	padding: 20px;
+	background-color: #191717;
+}
+.text_yellow_box {
+	padding: 10px 0;
+}
+.custom_table {
+	overflow-x: scroll;
+ display: block;
+ padding-bottom: 20px;
+}
+.review_descr {
+	margin: 0;
+}
+.review-text {
+	margin: 0 0px 0 15px;
+}
+.review-img img {
+	height: 300px;
+}
+
+.white-popup-block {
+	width: 100%;
+}
+
+.btn_allLong {
+ margin: 0 auto;
+}
+
+.mfp-close-btn-in .mfp-close {
+ right: 0px;
+ top: -50px;
+}
+
+}
+
+@media (max-width: 768px) {
+	.logo,
+	.navbar-nav {
+		margin-bottom: 30px;
+	}
+
+	.navbar-nav > li > a {
+  padding: 0px 10px 0 10px;
+}
+
+.container-top_guy {
+	display: none;
+}
+
+.top_text {
+	margin-top: 30px;
+	text-align: center;
+}
+.top_text .title-text {
+	font-size: 28px;
+}
+.top_text .subTitle-text {
+	font-size: 18px;
+	margin-bottom: 40px;
+}
+.top_text p {
+	font-size: 13px;
+	margin-bottom: 20px;
+}
+.top_text p:before, .top_text p:after {
+ margin: 10px auto;
+}
+.to_bottom {
+	display: none;
+}
+.btn_allLong {
+ width: 300px;
+ font-size: 14px;
+ margin: 0 auto;
+ padding: 8px 0;
+}
+.first_white img {
+	float: none;
+	display: block;
+	margin: 0 auto 25px;
+}
+.first_white h2,
+.first_white span,
+.first_white-btn {
+	text-align: center;
+	display: block;
+	margin: 0 auto;
+}
+.first_white-btn {
+	width: 300px;
+}
+.first_white p:before {
+	margin: 20px auto 20px;
+	width: 200px;
+}
+.first_white p {
+	margin-left: 25px;
+	font-size: 14px;
+}
+.before, .after {
+top: -2rem;
+width: 90px;
+padding: 5px 0;
+font-size: 16px;
+}
+
+.after {
+	right: 8rem;
+}
+
+.before {
+	left: 8rem;
+}
+
+.result_comment-blockRight {
+	border-radius: 25px;
+}
+.result_comment-blockLeft {
+	border-radius: 0;
+}
+
+.result_comment-blockLeft {
+	padding: 15px 25px 15px 25px;
+	position: inherit;
+}
+.result_comment p {
+	font-size: 16px;
+}
+.result_comment-textLeft > span {
+ right: 0;
+}
+.result_comment-blockRight {
+	padding: 0px 0px 25px 0px;
+	overflow: hidden;
+}
+.result_comment-textRight {
+margin: 20px 20px 0 0px;
+}
+.ourResults {
+	height: 920px;
+}
+.program-container .title-text,
+.help-program .title-text {
+	font-size: 26px;
+}
+.advantages .title-text > b {
+	font-size: 26px;
+}
+.card {
+	margin-bottom: 35px;
+}
+.video_preview {
+	height: 300px;
+}
+.program-container .title-text {
+	margin-bottom: 30px;
+}
+.slider_buttons {
+	margin: 25px auto 90px;
+	max-width: 300px;
+}
+.slider_button {
+	padding: 8px 30px 8px;
+ font-size: 18px;
+}
+
+.tariffs .title-text {
+	font-size: 32px;
+}
+.tariffs .subtitle-text {
+	font-size: 22px;
+	margin-bottom: 50px;
+}
+.marathon .title-text {
+	font-size: 26px;
+	margin: 50px 0 50px;
+}
+.card-body {
+	flex: 0;
+}
+.reviews .title-text {
+	font-size: 32px;
+	padding-bottom: 50px;
+}
+.reviews {
+	padding: 25px 0 0;
+}
+.first_white img {
+	width: 80%;
+}
+.first_white h2 {
+	font-size: 26px;
+}
+.first_white span {
+	font-size: 18px;
+}
+.help-program .subtitle-text {
+	font-size: 18px;
+}
+.card-title {
+	font-size: 18px;
+}
+.card-text {
+	font-size: 14px;
+}
+.card {
+	height: unset;
+	padding: 20px;
+	border-radius: 40px;
+}
+.custom_table {
+	font-size: 14px;
+	overflow-x: scroll;
+ display: block;
+ border-spacing: 3px 3px;
+ padding-bottom: 20px;
+}
+.custom_table th {
+	border-radius: 15px;
+	height: 75px;
+}
+.tariff_card_title {
+	font-size: 22px;
+}
+.tariff_card_subtitle {
+	margin-top: 0;
+}
+.old_price {
+	font-size: 18px;
+}
+.price {
+	font-size: 26px;
+}
+.btn_yellow {
+	font-size: 18px;
+}
+
+.tariff_card_noborders {
+	height: auto;
+	margin: 0px auto 25px;
+	padding: 20px 10px;
+	width: 90%;
+	padding: 20px 15px;
+}
+.text_yellow_box {
+	margin: 10px 0;
+}
+.map iframe {
+	height: 370px;
+}
+.footer_shape .container {
+	height: 140px;
+	justify-content: center;
+}
+.footer_left1 img {
+	margin: auto;
+	display: block;
+}
+.footer_left1 p {
+	text-align: center;
+	margin: 10px 0 30px;
+}
+.review_descr {
+	margin: 0;
+}
+.review-text {
+	margin: 10px 0px 20px 15px;
+}
+.review-img img {
+	height: auto;
+	width: 360px;
+}
+.review {
+	width: 360px;
+	margin: 50px auto 50px;
+}
+.reviews-title-text {
+	font-size: 28px;
+	padding: 40px 0 30px;
+}
+.footer_icons {
+ width: 100%;
+}
+.contact_us_form input {
+	padding: 10px 15px;
+}
+
+.white-popup-block {
+	width: auto;
+}
+
+.white-popup-block h2 {
+	font-size: 18px;
+}
+.form-submit-container {
+	justify-content: center;
+}
+.mfp-close-btn-in .mfp-close {
+ right: 0px;
+ top: -50px;
+}
+.form-container {
+	flex-direction: column;
+	padding: 0 20px;
+}
+
+.firstName-container,
+.lastName-container,
+.phone-container {
+	flex: 1;
+	margin-bottom: 15px;
+	width: 100%;
+}
+
+.lastName-container {
+	margin: 0 20px 15px;
+}
+.white-popup-block .form-submit {
+	width: 100%;
+	margin-top: 20px;
+
+}
+.form-submit-container {
+	padding: 0 20px;
+}
+.footer_shape .left_footer_shape {
+	flex: none;
+	text-align: center;
+}
+.tariff_card {
+	height: auto;
+}
+.custom_table td {
+	height: 75px;
+}
+}
